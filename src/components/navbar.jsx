@@ -5,9 +5,9 @@ function Navbar(){
     return (
         <nav className="navbar navbar-expand-lg nabbar-dark">
             <div className="container-fluid">
-                <link className="navbar-brand" to="#">
+                <Link className="navbar-brand" to="#">
                 Navbar
-                </link>
+                </Link>
                 <button
                 className="navbar-toggler"
                 type="button"data-bs-toggle="collapse"
@@ -20,26 +20,26 @@ function Navbar(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <link className="nav-link active" aria-current="page" to="/">
+                        <Link className="nav-Link active" aria-current="page" to="/">
                             Home
-                        </link>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <link className="nav-link" to="/catalog">
+                        <Link className="nav-Link" to="/catalog">
                             Catalog
-                        </link>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <link className="nav-link" to="/about">
+                        <Link className="nav-Link" to="/about">
                             About
-                        </link>
+                        </Link>
                     </li>
                 </ul>
                 <form className="d-flex" role="search">
                     
-                    <link className="btn btn-outline-light" to="/cart">
+                    <Link className="btn btn-outline-light" to="/cart">
                     View Cart
-                    </link>
+                    </Link>
                 </form>
             </div>
         </div>

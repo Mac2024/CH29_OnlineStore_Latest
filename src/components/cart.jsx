@@ -1,4 +1,4 @@
-import " ./cart"
+
 
 const Cart = () => {
 
@@ -8,3 +8,5 @@ const Cart = () => {
         </div>
     )
 }
+
+export default Cart;
