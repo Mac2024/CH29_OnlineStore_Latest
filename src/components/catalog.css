@@ -12,7 +12,7 @@
 .catalog h3 {
     font-size: 16px;
 }
-@media(min-width:768px){
+@media(max-width:768px){
     .products-container {
         grid-template-columns: repeat(1,1fr);
     }
