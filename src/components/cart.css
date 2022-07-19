@@ -2,3 +2,15 @@
     background-color:aqua;
     min-height: 800px;
 }
+
+.cart-page .parent {
+    display: flex;
+}
+
+.cart-page .list {
+    flex: 3;
+}
+
+.cart-page .info{
+    flex: 1;
+}

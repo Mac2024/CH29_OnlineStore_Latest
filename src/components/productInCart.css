@@ -1,0 +1,27 @@
+
+.product-cart {
+    display: flex;
+    border: 1px solid #676767;
+    margin-bottom: 12px ;
+    padding: 0 14px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: white;
+
+}
+
+.product-cart image {
+    height: 140px;
+    flex: 2;
+}
+
+.product-cart .info {
+    flex: 1;
+}
+.product-cart label {
+    flex: 1;
+}
+.product-cart button {
+    flex: 1;
+}

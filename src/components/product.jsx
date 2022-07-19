@@ -16,9 +16,13 @@ const Product = (props) => {
     return total.toFixed(2);
   };
   const handleAdd = () => {
-    console.log("add button pressed");
-    globalAddProd(props.data); // call the global fn
+    /** should be a copy of props.data plus quantity  */
+    let prod4Cart = { ...props.data, quantity: quantity };
+    //prod4Cart.quantity = quantity;
+
+    globalAddProd(prod4Cart); // call the global fn
   };
+
   return (
     <div className="product">
       <img src={"/images/" + props.data.image} alt="" />
