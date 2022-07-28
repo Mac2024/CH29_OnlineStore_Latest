@@ -1,8 +1,8 @@
 .catalog {
     padding-top: 10px;
 }
-.catalog h2 {
-    color: blue;
+ h2 {
+    color: black;
 }
 .products-container{
     display: grid;

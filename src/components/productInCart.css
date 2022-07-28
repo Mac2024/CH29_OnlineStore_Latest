@@ -17,11 +17,19 @@
 }
 
 .product-cart .info {
+    flex: 6;
+}
+.product-cart .price,
+.product-cart .quantity,
+.product-cart .total {
     flex: 1;
 }
-.product-cart label {
-    flex: 1;
-}
+
 .product-cart button {
     flex: 1;
+}
+
+.product-cart .col-head {
+    color: #333;
+    display: block;
 }

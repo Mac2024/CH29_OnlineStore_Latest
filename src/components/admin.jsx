@@ -1,11 +1,12 @@
 import "./admin.css";
 import { useState } from "react";
+import DataService from "../services/dataService";
 
 const Admin = () => {
   const [coupon, setCoupon] = useState({});
   const [product, setProduct] = useState({});
-  const [allCoupons, setAllCoupons] = useState({});
-  const [allProducts, setAllProducts] = useState({});
+  const [allCoupons, setAllCoupons] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
 
   const handleCouponChange = (e) => {
     let name = e.target.name;
@@ -21,7 +22,7 @@ const Admin = () => {
     let discount = parseFloat(coupon2beSaved.discount);
     coupon2beSaved.discount = discount;
 
-    console.log("coupon2beSaved");
+    console.log(coupon2beSaved);
 
     let copyCoupons = [...allCoupons];
     copyCoupons.push(coupon2beSaved);
@@ -38,13 +39,18 @@ const Admin = () => {
   };
 
   const saveProduct = () => {
-    let copy = [...product];
-    copy.price = parseFloat(copy.price);
+    let copy = [...allProducts];
+    copy.push(product);
+    setAllProducts(copy);
     console.log(copy);
 
-    let copyAllProds = [...allProducts];
-    copy.AllProds.push(copy);
-    setAllCoupons(copyAllProds);
+    // todo: save copy on server
+    let service = new DataService();
+    service.saveProduct(copy);
+
+    //let copyAllProds = [...allProducts];
+    // copy.AllProds.push(copy);
+    // setAllProducts(copyAllProds);
   };
   return (
     <div className="admin-page">
@@ -55,13 +61,13 @@ const Admin = () => {
           <h3>Products</h3>
           <div className="form"></div>
           <div className="products-list">
-            <ul>
+            {/* <ul>
               {allProducts.map((prod, index) => (
                 <li key={index}>
                   {prod.title} - ${prod.price}
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
           <div className="field">
             <label>Title</label>
@@ -110,11 +116,11 @@ const Admin = () => {
 
             <hr />
 
-            <ul>
+            {/* <ul>
               {allProducts.map((p, index) => (
                 <li key={index}>{p.title}</li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </section>
 
@@ -135,20 +141,6 @@ const Admin = () => {
                 type="number"
               />
             </div>
-
-            <div className="my-control">
-              <button className="btn btn-dark"></button>
-            </div>
-          </div>
-
-          <div>
-            <label>Discount</label>
-            <input
-              name="discount"
-              onChange={handleCouponChange}
-              className="form-control"
-              type="number"
-            />
           </div>
 
           <div className="field">

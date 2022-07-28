@@ -1,3 +1,5 @@
+import axios from "axios";
+
 let catalog = [
   {
     id: 1,
@@ -55,8 +57,19 @@ let catalog = [
   },
 ];
 class DataService {
-  getCatalog() {
-    return catalog;
+  serverURL = "http://127.0.0.1:5000/api/products";
+
+  async getCatalog() {
+    // TODO: call the server and get the data
+    let response = await axios.get("http://127.0.0.1:5000/api/products");
+    return response.data;
+    // use the line below to show a catalog without backend
+    // return catalog
+  }
+
+  async saveProduct(prod) {
+    // send prod to server
+    let response = await axios.post(this.serverURL + "/api/products", prod);
   }
 }
 

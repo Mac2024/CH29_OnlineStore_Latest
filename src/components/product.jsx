@@ -27,7 +27,7 @@ const Product = (props) => {
     <div className="product">
       <img src={"/images/" + props.data.image} alt="" />
       <h2>{props.data.title}</h2>
-      <label>Price: ${props.data.price.toFixed(2)}</label>
+      <label>Price: ${(+props.data.price).toFixed(2)}</label>
       <label>Total: ${getTotal()}</label>
       <QuantityPicker onChange={quantityChange}></QuantityPicker>
       <button onClick={handleAdd} className="btn btn-primary">

@@ -23,17 +23,17 @@ const ProductInCart = (props) => {
       </div>
 
       <div className="price">
-        <label>Price</label>
+        <label className="col-head">Price</label>
         <label>${props.data.price}</label>
       </div>
 
       <div className="quantity">
-        <label>Quantity</label>
+        <label className="col-head">Quantity</label>
         <label>${props.data.quantity}</label>
       </div>
 
       <div className="total">
-        <label>Total</label>
+        <label className="col-head">Total</label>
         <label>${getTotal()}</label>
       </div>
 
